@@ -1,0 +1,27 @@
+<form class="form-horizontal uploadForm" role="form" method="post" action="/upload" enctype="multipart/form-data">
+  <div class="form" method="POST">
+
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"></label>
+      <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" placeholder="Описание"></textarea>
+    </div>
+    <div class="input-group mb-3">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input fileInput" name="uploaded_image" id="inputGroupFile03"
+          aria-describedby="inputGroupFileAddon03" multiple>
+        <label class="custom-file-label" for="inputGroupFile03">Выберите изображения</label>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <select class="custom-select yearsList" name="year" >
+        <option selected>Год выпуска</option>
+        <% for(var i = 0; i<years.length; i++){%>
+        <option value="<%= years[i].id%>"><%= +years[i].name%></option>
+        <% } %>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <button class="btn btn-primary uploadButton" type="submit" disabled>Загрузить</button>
+    </div>
+  </div>
+</form>

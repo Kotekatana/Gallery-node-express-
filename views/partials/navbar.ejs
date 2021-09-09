@@ -1,0 +1,27 @@
+
+<nav class="navbar navbar-dark  navbar-expand-lg p-0" style="background-color: #124675;" >
+  <div class="container">
+  <a class="navbar-brand <%if (active === 'main'){%>active <%}%>" href="/"><img src="/images/logo.svg" style="height: 75px;" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav"> 
+      <li class="nav-item" >
+        <a class="nav-link <%if (active === 'gallery'){%>active <%}%>" href="/gallery"><p class="h3 font-weight-light">Галерея</p></a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link <%if (active === 'upload'){%>active <%}%>" href="/upload"><p class="h3 font-weight-light">Загрузка</p></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%if (active === 'contacts'){%>active <%}%>" href="/contacts"><p class="h3 font-weight-light ">Контакты</p></a >
+      </li>
+      <li class="nav-item" id ="admin">
+        <a class="nav-link <%if (active === 'admin'){%>active <%}%>" href="/admin"><p class="h3 font-weight-light" >Админ</p></a >
+      </li>
+      <li class="nav-item" id ="login">
+        <a class="nav-link <%if (active === 'login'){%>active <%}%>" href="/login"><p class="h3 font-weight-light" >Войти</p></a >
+      </li>
+  </div>
+</div>
+</nav>

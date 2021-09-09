@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<%- include('./partials/header.ejs');%>
+</head>
+
+<body>
+	<%- include('./partials/navbar.ejs');%>
+	<div class="container">
+		<%= message %>
+		<form class="form-horizontal" role="form" method="post" action="/login" enctype="multipart/form-data" name="loginForm">
+			<div class="form" method="POST">
+				<div class="mb-3">
+					
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Логин</label>
+					<input type="text" class="form-control loginInput"  name = "login" id="exampleFormControlInput1" placeholder="Логин" id = "loginID">
+				</div>
+				<div class="mb-3">
+					<label for="exampleFormControlInput1" class="form-label">Пароль</label>
+					<input type="password" class="form-control passInput" name="password" placeholder="Пароль" id = "passID">
+				</div>
+				<div class="d-grid gap-2">
+					<button class="btn btn-primary" type="submit" id = "submitBtn">Войти</button>
+				</div>
+			</div>
+			</form>
+	</div>
+	<%- include('./partials/scripts.ejs');%>
+	<script src="login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%- include('./partials/header.ejs');%>
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs');%>
+
+    <div class="container">
+        <% for(var i = 0; i<years.length; i++){%>
+            <a href="gallery/<%= years[i].id%>">
+                <div class="card bg-dark text-white" style="height: 350px;margin-top: 25px; ">
+                    <img src="images/year_image/<%= years[i].img%>" class="card-img " alt="..." style="object-fit: cover; height: 100%;">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title"><h1 class="display-3"><%= years[i].name%></h1></h5>
+                        <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                            content. This content is a little bit longer.</p>
+                        <p class="card-text">Last updated 3 mins ago</p> -->
+                    </div>
+                </div>
+            </a>
+        <% } %>
+
+
+        <div class="card-columns">
+            <% for(var i = 0; i<users.length; i++){%>
+            <div class="card">
+                
+                <a href="/images/upload_images/<%=users[i].image%>"  data-lightbox="image-1" data-title="<%=users[i].description%>">
+                   <img src="/images/upload_images/<%=users[i].image%>"  class="card-img-top" alt="..."> 
+                </a>
+                
+            </div>
+            <% } %>
+        </div>
+
+    </div>
+    <%- include('./partials/scripts.ejs');%>
+    </body> 
+
+</html>

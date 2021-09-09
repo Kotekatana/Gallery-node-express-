@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<%- include('./partials/header.ejs');%>
+</head>
+
+<body>
+
+	<%- include('./partials/navbar.ejs');%>
+	<div class="container">
+		<nav>
+			<div class="nav nav-tabs" id="nav-tab" role="tablist">
+				<a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+					aria-controls="nav-home" aria-selected="true">Изображения</a>
+				<a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+					aria-controls="nav-profile" aria-selected="false">Год выпуска</a>
+				<!-- <a class="nav-link disabled" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+					aria-controls="nav-contact" aria-selected="false">Contact</a> -->
+			</div>
+		</nav>
+		<div class="tab-content" id="nav-tabContent">
+			<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+				<section class="uncheckedPictures">
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th scope="col">id</th>
+								<th scope="col">image</th>
+								<th scope="col">Описание</th>
+								<th scope="col">Добавить</th>
+								<th scope="col">Удалить</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% for(var i = 0; i<pictures.length; i++){%>
+							<tr id="<%=pictures[i].id %>">
+								<th scope="row"><%=pictures[i].id %></th>
+								<td>
+									<a href="/images/upload_images/<%=pictures[i].image%>" data-lightbox="image-1"
+										style="height: 50px;">
+										<img src="/images/upload_images/<%=pictures[i].image%>" style="height: 50px;">
+									</a>
+								</td>
+								
+								<td>
+									<div class="input-group">
+										<textarea class="form-control" aria-label="With textarea" data-id="<%=pictures[i].id %>"><%=pictures[i].description%></textarea>
+									  </div>
+
+								</td>
+								<td><button type="button" class="btn btn-success">Добавить</button></td>
+								<td><button type="button" class="btn btn-danger">Удалить</button></td>
+							</tr>
+							<% } %>
+						</tbody>
+					</table>
+				</section>
+			</div>
+			<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+				<section class="addYear">
+					<form class="form-horizontal" role="form" method="post" action="/uploadYear" enctype="multipart/form-data">
+						<div class="form" method="POST">
+
+							<div class="mb-3">
+								<label for="exampleFormControlTextarea1" class="form-label">Год</label>
+								<input class="form-control"type="number" name="year" min="2000" max="2050" value="2000">
+							</div>
+
+							<div class="mb-3">
+								<label for="formFileMultiple" class="form-label" name="uploaded_image">Фотография</label>
+								<input class="form-control" type="file" name="uploaded_image" accept="" multiple />
+							</div>
+
+							<div class="d-grid gap-2">
+								<button class="btn btn-primary" type="submit">Загрузить</button>
+							</div>
+						</div>
+					</form>
+				</section>
+			</div>
+			<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+		</div>
+
+
+
+
+
+
+
+
+
+	</div>
+	<%- include('./partials/scripts.ejs');%>
+	<script src="/admin.js"></script>
+
+</body>
+
+</html>

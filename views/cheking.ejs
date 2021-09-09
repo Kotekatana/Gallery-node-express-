@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs');%>
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs');%>
+    <!-- <section class="home">
+        <h1>Contacts list</h1>
+        <ul class="list-group">
+            <% for(var i=0; i<users.length; i++) {%>
+            <li class="list-group-item">
+                <span>Name: </span><%= users[i].first_name %>
+                <br />
+                <span>Phone: </span><%= users[i].last_name %>
+                <br />
+                <span>Photo:</span><img alt="User Pic"
+                    src="http://localhost:3000/images/upload_images/<%=users[i].image%>"
+                    class="img-circle img-responsive"> %>
+            </li>
+            <% } %>
+        </ul>
+    </section> -->
+    <div class="container d-flex flex-wrap">
+        <form class="cards_wrapper" action="/cheking">
+        <% for(var i = 0; i<users.length; i++){%>
+        <div class="card " style="width: 18rem;">
+            <img src="http://localhost:3000/images/upload_images/<%= users[i].image%>" class="card-img-top" alt="...">
+            <div class="card-body" id="<%= users[i].id%>">
+                <p class="card-text"><%= users[i].description %>.</p>
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="sss/<%= users[i].id%>"><%= users[i].first_name %></a></li>
+                        <li class="list-group-item"><%= users[i].last_name %></li>
+                        <li class="list-group-item"><%= users[i].mob_no %></li>
+                        <li class="list-group-item"><%= users[i].email %></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <button type="submit"></button>
+    </form>
+
+    </div>
+
+
+</body>
+
+</html>

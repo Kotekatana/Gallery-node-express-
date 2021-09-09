@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <%- include('./partials/header.ejs');%>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs');%>
+    <div class="container">
+        <div class="contacts">
+            <p class="h3 font-weight-light">Адрес</p>
+            <p class="h5 font-weight-light">Турбинная ул., 261, Волгоград, Волгоградская обл., 400079</p>
+            <p class="h3 font-weight-light">Сайт</p>
+            <p class="h5 font-weight-light"><a href="http://www.energocollege.ru/">www.energocollege.ru</a></p>
+            <p class="h3 font-weight-light">Номер телефона</p>
+            <p class="h5 font-weight-light"><a href="tel:+78442426719">+7(8442)42-67-19</a> (дневное отделение)</p>
+            <p class="h5 font-weight-light"><a href="tel:+78442426712">+7(8442)42-67-12</a> (заочное отделение)</p>
+        </div>
+        <div class="map">
+
+            <label for="iframe"><p class="h3 font-weight-light">Мы находимся тут</p></label>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2637.3372044758617!2d44.419579899999995!3d48.622529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41052d61817c25d7%3A0x4aca227cb9e6cfd5!2z0JLQvtC70LPQvtCz0YDQsNC00YHQutC40Lkg0Y3QvdC10YDQs9C10YLQuNGH0LXRgdC60LjQuSDQutC-0LvQu9C10LTQtg!5e0!3m2!1sru!2sru!4v1623684920717!5m2!1sru!2sru" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+    <%- include('./partials/scripts.ejs');%>
+</body>
+</html>

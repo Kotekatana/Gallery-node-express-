@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs');%>
+    
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs');%>
+
+    <h1>Masonry Gallery</h1>
+    
+
+    <div class="gallery" id="gallery">
+        <% for(var i = 0; i<users.length; i++){%>
+            <div class="gallery-item">
+            <div class="content"><img src="http://localhost:3000/images/upload_images/<%= users[i].image%>" alt="">
+            </div>
+        </div>
+        <% } %>
+    </div>
+        <script src="script.js"></script>
+</body>
+
+</html>
